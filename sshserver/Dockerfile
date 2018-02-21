@@ -20,11 +20,6 @@ RUN apt-get update && apt-get install -y \
     unzip \
     openssh-server
 
-
-#USER usuariosshserver
-#RUN mkdir -p /home/usuariosshserver
-#WORKDIR /home/usuariosshserver
-
 EXPOSE 22
 
 COPY start.sh /bin/start.sh
