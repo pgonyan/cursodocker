@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Abra un navegador en la direccion localhost:9050"
+
+docker run -ti --rm -p 9050:80 --name esit-php-mysql -v $1:/var/www/html  esit-php-mysql
