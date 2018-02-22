@@ -15,6 +15,20 @@ services:
     networks:
     - webnet
 
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - misdatos:/data
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    command: redis-server --appendonly yes
+
+volumes:
+    misdatos:
+
 networks:
   webnet:
 
