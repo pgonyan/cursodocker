@@ -13,10 +13,11 @@ services:
     ports:
       - "80:80"
     networks:
-    - webnet
+      - webnet
 
   redis:
     image: redis
+    hostname: redis
     ports:
       - "6379:6379"
     volumes:
@@ -25,6 +26,8 @@ services:
       placement:
         constraints: [node.role == manager]
     command: redis-server --appendonly yes
+    networks:
+      - webnet
 
 volumes:
     misdatos:
