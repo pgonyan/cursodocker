@@ -12,7 +12,7 @@ services:
       # this takes advantage of the feature in Docker that a new anonymous
       # volume (which is what we're creating here) will be initialized with the
       # existing content of the image at the same location
-      - /var/www/html/sites
+      - datos:/var/www/html/sites
     restart: always
 
   postgres:
@@ -21,4 +21,5 @@ services:
       POSTGRES_PASSWORD: example
     restart: always
 
-
+volume:
+  datos:
